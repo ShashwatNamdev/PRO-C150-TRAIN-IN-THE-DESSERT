@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <title>Train in the Dessert</title>
+</head>
+<body>
+    <a-scene
+        background="color: lightblue">
+        <a-camera
+            wasd-controls-enabled="true"
+            position="18 3 5">
+        </a-camera>
+        <!-- Asset Management -->
+        <a-assets>
+            <!-- For Train -->
+            <a-assets-item
+                id="train-obj"
+                src="./Models/obj/Train Model/tinker.obj">
+            </a-assets-item>
+            <a-assets-item
+                id="train-mtl"
+                src="/Models/obj/Train Model/obj.mtl">
+            </a-assets-item>
+
+            <!-- For Track -->
+            <a-assets-item
+                id="track-obj"
+                src="/Models/obj/Track Model/tinker.obj">
+            </a-assets-item>
+            <a-assets-item
+                id="track-mtl"
+                src="/Models/obj/Track Model/obj.mtl">
+            </a-assets-item>
+        </a-assets>
+
+        <!-- Plane -->
+        <a-circle
+            id="floor"
+            position="0 -1 0"
+            rotation="-90 0 0"
+            radius="500"
+            shadow="receive: true"
+            visible="true"
+            color="sandybrown">
+        </a-circle>
+
+        <!-- Fences -->
+        <a-box
+            id="fence"
+            position="0 0 -5"
+            width="300"
+            height="7"
+            color="yellow">
+        </a-box>
+
+        <!-- Train -->
+        <a-entity
+            obj-model="obj: #train-obj; mtl: #train-mtl"
+            position="0 -1 -3"
+            rotation="-90 0 -90"
+            scale="0.1 0.1 0.1">
+        </a-entity>
+
+        <!-- Track -->
+        <a-entity
+            obj-model="obj: #track-obj; mtl: #track-mtl"
+            position="0 -1 -3"
+            rotation="-90 0 -90"
+            scale="0.1 0.1 0.1">
+        </a-entity>
+        <a-entity
+            obj-model="obj: #track-obj; mtl: #track-mtl"
+            position="-79 -1 -3"
+            rotation="-90 0 -90"
+            scale="0.1 0.1 0.1">
+        </a-entity>
+    </a-scene>
+</body>
+</html>
